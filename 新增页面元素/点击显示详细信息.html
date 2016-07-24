@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--details元素和summary元素-->
+    <details id="dateil" onclick="detail_onclick(this)">
+        <summary>MEGAMIND</summary>
+        <p id="p" style="visibility: hidden">这是电影超级大坏蛋</p>
+    </details>
+
+    <script>
+        function detail_onclick(detail){
+            var p=document.getElementById("p")
+            if(detail.open){
+                p.style.visibility="hidden"
+            }else{
+                p.style.visibility="visible"
+            }
+        }
+    </script>
+
+    <!--Mark元素-->
+    <p>这是一段文字，用来<mark>测试</mark>Mark属性</p>
+</body>
+</html>

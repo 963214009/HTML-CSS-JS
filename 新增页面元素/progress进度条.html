@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--progress元素设置进度条-->
+    <section>
+        <h2>progress元素的使用</h2>
+        <p>完成的百分比<progress style="background-color: mediumvioletred " id="p" max="100"></progress></p>
+        <input type="button" onclick="btn()" value="开始">
+    </section>
+
+    <script>
+        function btn(){
+            var i=0
+            function xunhuan(){
+                if(i<=100){
+                    i++
+                    updateprogress(i)
+                }
+            }
+//            设置方程循环时间间隔
+            setInterval(xunhuan,200)
+
+        }
+        function updateprogress(newvalue){
+            var progressBar=document.getElementById("p")
+            progressBar.value=newvalue
+            progressBar.getElementsByTagName("span")[0].textContent=newvalue
+        }
+    </script>
+
+
+    <!--meter元素-->
+    <meter value="40" min="0" max="100" low="10" height="90" optimum="80"></meter>
+</body>
+</html>
