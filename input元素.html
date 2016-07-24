@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--url类型-->
+    <form action="http://www.baidu.com">
+        <input name="url" type="url" value="http://www.baidu.com">
+        <input type="submit" value="提交">
+    </form>
+
+
+    <!--email类型-->
+    <form>
+        <input name="email" type="email" value="iwen@jikexueyuan.com">
+        <input type="submit" value="提交">
+    </form>
+
+
+    <!--date类型-->
+    <input type="date" name="date" value="">
+
+
+    <!--time类型-->
+    <input name="time" type="time" value="10:00">
+
+
+    <!--datetime类型-->
+    <input name="datetime" type="datetime" value="">
+
+
+    <!--datetime-local类型-->
+    <input name="datetime-local" type="datetime-local">
+
+
+    <!--month元素-->
+    <input name="month" type="month" value="2010-01-01">
+
+
+    <!--week元素-->
+    <input name="week" type="week">
+
+
+    <!--number类型-->
+    <!--如果没输入数字将空白提交-->
+    <input name="number" type="number" value="15" max="100" min="10" step="10">
+
+
+    <!--计算器-->
+    <br/>
+    <form>
+        <input type="number" id="num1">
+        +
+        <input type="number" id="num2">
+        =
+        <input type="number" id="result" readonly>
+        <input type="button" value="计算" onclick="sum()">
+    </form>
+    <script>
+        function sum(){
+            var n1=document.getElementById("num1").valueAsNumber
+            var n2=document.getElementById("num2").valueAsNumber
+            document.getElementById("result").valueAsNumber=n1+n2
+        }
+    </script>
+
+
+    <!--range元素-->
+    <!--可拖动的滑动条-->
+    <input name="range" type="range" value="25" min="0"  max="100" step="1">
+
+
+    <!--search类型-->
+    <input type="search">
+
+
+    <!--tel类型-->
+    <input type="tel">
+
+
+    <!--color类型-->
+    <input type="color" onchange="document.body.style.backgroundColor=document.getElementById('currentColor').textContent=this.value">
+    <span id="currentColor"></span>
+
+
+    <!--output元素的追加-->
+    <!--滑动条滑动对应相应的数字-->
+    <form id="testform">
+        <input id="range" type="range" min="0" max="100" step="5" value="10" onchange="value_change()">
+        <output id="output">10</output>
+    </form>
+    <script>
+        function value_change(){
+            var number=document.getElementById("range").value
+            document.getElementById("output").value=number
+        }
+    </script>
+
+    <!--表单验证-->
+    <form id="testform" onsubmit="check()" novalidate="true">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"><br/>
+        <input type="submit">
+    </form>
+    <script>
+        function check() {
+            var email=document.getElementById("email")
+            if(email.value==""){
+                alert("请输入email")
+                return false
+            }else if(!email.checkValidity()){
+                alert("请输入正确的格式")
+                return false
+            }
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
