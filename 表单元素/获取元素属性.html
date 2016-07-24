@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="input">
+        <input type="submit" value="获取selectionDirection属性" onclick="SD()">
+    </form>
+    <script>
+        function SD(){
+            var control=document.forms[0]["text"]
+            var direction=control.selectDirection
+            alert(direction)
+        }
+    </script>
+
+</body>
+</html>
