@@ -1,0 +1,10 @@
+.tupian{
+    column-width: 300px;
+    -webkit-column-width: 300px;
+    column-gap: 5px;
+    -webkit-column-gap: 5px;
+}
+.tupian div{
+    width: 250px;
+    margin: 5px 0px;
+}
